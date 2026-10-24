@@ -1,3 +1,24 @@
+          Start-Process msiexec -ArgumentList "/i C:\tailscale.msi /quiet /norestart" -Wait
+
+
+
+          Connect to Tailscale network
+
+          Start-Sleep -Seconds 5
+
+          & "C:\Program Files\Tailscale\tailscale.exe" up --authkey="$Env:TAILSCALE_AUTHKEY" --hostname="github-rdp-server"
+
+
+
+          Start-Sleep -Seconds 8
+
+
+
+           Get Tailscale IP
+
+          $ts_ip = & "C:\Program Files\Tailscale\tailscale.exe" ip -4
+
+
 
           Write-Host ""
 
@@ -7,9 +28,9 @@
 
           Write-Host "  Tailscale IP : $ts_ip" -ForegroundColor Yellow
 
-          Write-Host "  Username     : xiuzhu" -ForegroundColor Yellow
+          Write-Host "  Username     : NvdAdmin" -ForegroundColor Yellow
 
-          Write-Host "  Password     : xiu199303zhu" -ForegroundColor Yellow
+          Write-Host "  Password     : P@ssw0rd1qazXSW@#" -ForegroundColor Yellow
 
           Write-Host "  >> Open mstsc and connect to: $ts_ip" -ForegroundColor Magenta
 
