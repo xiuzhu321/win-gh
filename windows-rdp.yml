@@ -1,1 +1,30 @@
 
+          Write-Host ""
+
+          Write-Host "==========================================" -ForegroundColor Green
+
+          Write-Host "  >>> RDP SERVER IS READY! <<<" -ForegroundColor Cyan
+
+          Write-Host "  Tailscale IP : $ts_ip" -ForegroundColor Yellow
+
+          Write-Host "  Username     : xiuzhu" -ForegroundColor Yellow
+
+          Write-Host "  Password     : xiu199303zhu" -ForegroundColor Yellow
+
+          Write-Host "  >> Open mstsc and connect to: $ts_ip" -ForegroundColor Magenta
+
+          Write-Host "==========================================" -ForegroundColor Green
+
+
+
+      - name: 4. Keep Server Alive (48 Hours)
+
+        run: |
+
+          for ($i = 1; $i -le 2880; $i++) {
+
+              Start-Sleep -Seconds 60
+
+              Write-Host "[$i/2880] Server running..."
+
+          }
